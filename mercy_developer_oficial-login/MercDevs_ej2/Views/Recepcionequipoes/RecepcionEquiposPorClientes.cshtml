@@ -1,0 +1,99 @@
+﻿@model IEnumerable<MercDevs_ej2.Models.Recepcionequipo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<body>
+    <table class="table">
+        <thead td style="white-space: nowrap;">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TipoPc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Accesorio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MarcaPc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ModeloPc)
+                </th>
+                <th>
+                    N° Serie
+                </th>
+                <th>
+                    Cap Ram
+                </th>
+                <th>
+                    Tipo almacenamiento
+                </th>
+                <th>
+                    Cap Almacenamiento
+                </th>
+                <th>
+                    Tipo_Gpu
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Grafico)
+                </th>
+                <th>
+                    Servicios
+                </th>
+                <th>
+                    Acciones
+                </th>
+            </tr>
+        </thead>
+        <tbody style="text-align">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="white-space: nowrap;">
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoPc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Accesorio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MarcaPc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModeloPc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nserie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CapacidadRam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoAlmacenamiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CapacidadAlmacenamiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoGpu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Grafico)
+                    </td>
+                    <td>
+                        <a asp-controller="Recepcionequipoes" asp-action="RecepcionEquiposPorClientes" asp-route-id="@item.IdServicio"><button type="button" class="btn btn-info">Ver R.E.</button></a>     
+                    </td>
+                    <td>
+                        <a asp-controller="Recepcionequipoes" asp-action="RecepcionEquiposPorClientes" asp-route-id="@item.IdServicio"><button type="button" class="btn btn-primary">Recepcion del Equipo</button></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
